@@ -1,5 +1,17 @@
 import React from 'react';
 
+export interface FAQItem {
+    question: string;
+    answer: string;
+}
+
+export interface SEOData {
+    longDescription: string;
+    features: string[];
+    faq: FAQItem[];
+    keywords: string[];
+}
+
 export interface Game {
     id: string;
     title: string;
@@ -7,8 +19,8 @@ export interface Game {
     instructions: string;
     category: string;
     icon: string;
-    // Fix: Add React import to resolve the React.FC namespace
     component: React.FC<any>;
+    seoData?: SEOData; // Optional SEO content
 }
 
 export interface GameState {
